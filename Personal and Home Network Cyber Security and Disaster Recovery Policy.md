@@ -1,5 +1,4 @@
-Date Created: 2024-09-04
-Last Updated: 2024-09-05
+
 
 ## Policy Brief & Purpose
 
@@ -159,7 +158,7 @@ Should a compromise or incident occur, the following steps should be followed.
 	- check file-system
 	- retrace your own activities (was this a breach or was this invited in by negligence)
  - Patch and test the vulnerability
- - 
+   
 
 
 
