@@ -1,5 +1,5 @@
 Date Created: 2024-09-04
-Last Updated: 2024-12-28
+Last Updated: 2025-01-01
 
 # Table of Contents
 - [Policy Brief & Purpose](#policy-brief--purpose)
@@ -9,6 +9,7 @@ Last Updated: 2024-12-28
 	- [Protect Personal Devices](#protect-personal-devices)
 	- [Emails](#emails)
 	- [Manage Passwords Properly](#manage-passwords-properly)
+	- [Multi-Factor Authentication](#multi-factor-authentication)
 	- [Communications](#communications)
 		- [Texting/SMS:](#textingsms)
 		- [Browsing:](#browsing)
@@ -34,7 +35,7 @@ This policy will mitigate risk and loss by defining procedures for storing, hand
 
 ## Scope
 
-This policy applies to myself and all devices that I have legal ownership over. This policy is shared with and encouraged to be used by those who share residence with myself, friends, family, or otherwise to further reduce risk of data and asset loss. 
+This policy applies to myself and all devices that I have legal ownership over. This policy is shared with and encouraged to be used by those who share residence with myself, friends, family, or any reader that wishes to reduce risk of data and asset loss. 
 
 ## Policy elements
 
@@ -46,6 +47,7 @@ This data is secret and valuable. This policy outlines how to incorporate the cy
 - Personal Journal/Diary
 - Passwords
 - Banking Information
+- Browsing history and patterns
 
 
 ### Protect Personal Devices
@@ -79,19 +81,20 @@ While it is not mandatory for all personal devices on the network, there are ext
 
 Emails remain one of, if not the most, common mediums of attacks for malicious actors. Here we outline some foundational protocols for handling emails as well as some higher level tools we can leverage for additional protection.
 
-- Don't open attachments from unknown senders. 
+- Don't open attachments from unknown senders. (Just the act of opening a PDF is enough to give attackers complete control over your system)
 
-- Be suspicious of clickbait titles and subject lines.
+- Be suspicious of clickbait titles and subject lines. (These are often "phishing" or social engineering attempts to get you to voluntarily give up personal information.)
 
 - Look for inconsistencies or "tells" of a malicious/spam email. (grammar mistakes, asking for information)
 
 	**Additional Tools:**
-		Because emails are a large medium of attack and because we must use email in some capacity to interact with our confidential data, (work, banking, taxes, etc) I have determined that the monetary value of the assets being protected warrants a budget to further secure it. To this end, the following additional tools are used:
+		Because emails are a large medium of attack and because we must use email in some capacity to interact with our **confidential data**, (work, banking, taxes, etc) I have determined that the monetary value of the assets being protected warrants a budget to further secure it. To this end, the following additional tools are used:
 
 	- A paid [Proton Mail](https://proton.me/mail) account which gets us access to:
-		- Aliases 
-		- Threat monitoring 
-		- More advanced spam filtering
+		- **Aliases** - allows us to give out and burn an alias if needed, instead of compromising our main email
+		- **Threat monitoring** - Proton will do scans of the internet on your behalf to look for compromises, breaches, etc. Better than nothing. 
+		- **VPN** - More on this in the [[#Networking]] section.
+		- **Advanced Spam Filtering**
 		
 	- [Yubikey 2FA](https://www.yubico.com/) authentication devices to secure the email account, and other accounts, which grants a higher level of security than SMS 2FA, which is susceptible to SIM Swap attacks. 
 
@@ -114,29 +117,44 @@ Passwords are the keys to the kingdom and the assets within it. As such, securin
 - Change passwords every 6-12 months and after news of any breaches.
 
 
+### Multi-Factor Authentication
+
+All online accounts, where possible, should be secured using some kind of multi-factor authentication. This means something in addition to a username and password. Not all multi-factor is equal though, so the method used should be chosen in this order:
+
+1. Hardware key device like an RSA fob or Yubikey
+2. A One-Time-Passcode (OTP) generated using a 2FA app 
+3. A OTP generated and sent via email
+4. Security questions (dont use your dogs name for obvious reasons)
+5. A OTP generated and sent via SMS (avoid this at all costs, but it's better than nothing)
+
+
 ### Communications
 
 How we communicate with one another or our resources greatly effects how large or small our attack surface is. There are countless ways to measure and quantify the effectiveness of these measures as well as countless tools to leverage. I have selected a few here that I feel are the most important. 
 
 #### Texting/SMS:
-Default text messaging apps on mobile devices are very insecure so it is recommended that all mobile devices use a trusted and secure texting solution like [Signal](https://signal.org/)
+Default text messaging apps on mobile devices are very insecure so it is recommended that all mobile devices use a trusted and secure texting solution like [Signal](https://signal.org/). 
 
 #### Browsing:
 Many web browsers are extremely insecure or, at the very least, force you to behave in insecure ways, (like Chrome dropping support for ad blocking extensions). Below is a list of approved browsers for devices on the network:
-1. [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-2. [TOR](https://www.torproject.org/)
-3. [Brave](https://brave.com/)
-4. [Libre Wolf](https://librewolf.net/)
+1. [Firefox](https://www.mozilla.org/en-US/firefox/new/) (A great combination of features, user friendliness, and security)
+2. [TOR](https://www.torproject.org/) (Learn about Onion Routing before using it)
+3. [Brave](https://brave.com/) (Like Firefox, but Chromium based, which is also open source)
+4. [Libre Wolf](https://librewolf.net/) (A more locked down version of Firefox with things like anti-digital fingerprinting)
 
 All browsers should have some kind of trusted ad-blocker extension installed on them as well for further protection. 
-1. [UBlock Origin](https://ublockorigin.com/)
+1. [UBlock Origin](https://ublockorigin.com/) 
 2. [AdGaurd](https://adguard.com/en/welcome.html)
 3. [AdBlock Plus](https://adblockplus.org/)
 
 #### Networking:
- Should be configured to use a trusted VPN service provider. While this may be less important when connected to our home network, this becomes mandatory to maintain any kind of security when using public WiFi or even cellular data. 
+ All networking devices, like our home router, should have default credentials changed and all other guest or admin accounts disabled, if present. Ideally, the router should have one account that has a unique username and password that only you know. 
+ 
+ Personal devices should be configured to use a trusted VPN service provider. While this may be less important when connected to our home network, this becomes mandatory to maintain any kind of security when using public WiFi or even cellular data. 
 - Best:  [Mullvad VPN](https://mullvad.net/en) (The most secure, as it also does not require you to forfeit sensitive financial information)
 - Better: [Proton VPN](https://protonvpn.com/) (Very good option for our users who are using Proton for Email)
+
+Despite the vast amount of misinformation out there in regard to VPNs, you should absolutely use them if you are on ANY other network other than the one you were provided by your ISP. And I would still use one even while on your ISP network, which some people will either agree with or disagree with. But definitely use a VPN on any personal device that is connecting to a public WiFI network. 
   
   
 ### Transferring Data Securely
@@ -206,26 +224,27 @@ Should a compromise or incident occur, the following steps should be followed.
 
 - Quickly identify the threat and all effected machines
 - Identify the pros and cons of immediately bringing those machines offline
-	- **Pros**: Immediately stop something like exfiltration or encryption
+	- **Pros**: Immediately stop something like exfiltration or ransomware encryption
 	- **Cons**: May leave us in the dark as to who attacked us and by which vector they were able to do so
 - Contain and quarantine all effected machines so that they are not connected to the network or any important resources
 - Run an autopsy on the machines and all effected files to learn more about what happened so it can be prevented in the future
 	- checks logs
 	- check file-system
 	- retrace your own activities (was this a breach or was this invited in by negligence)
+	- Reverse engineer
  - Patch and test the vulnerability
 
 
 
 ### Backup, Redundancy, Protection Protocols
 
-To ensure data is not lost due to compromise, error, or otherwise, a backup protocol will be implemented proportional to the value of the data being backed up. 
+To ensure data is not lost due to compromise, error, natural disaster, or otherwise, a backup protocol will be implemented proportional to the value of the data being backed up. 
 
 - Non-essential files can be stored on devices or user file shares on the home NAS. (to mitigate loss due to device failure, loss, breakage, etc)
   
 - More important files will be stored on devices or user account shares on the home NAS and be included in a routine backup to warm storage. From the device they will be synced to the user share and from there be backed up to a large storage device attached to the NAS. 
   
-- A routine backup of the home NAS to another warm storage device will take place every Sunday evening, to include all essential files. 
+- An automatic routine backup of the home NAS to another warm storage device will take place every Sunday evening, to include all essential files. 
   
 - From here, all data higher up in the sensitivity hierarchy will be separated into two groups:
   
@@ -237,7 +256,7 @@ To ensure data is not lost due to compromise, error, or otherwise, a backup prot
 
 - KeepassXC password database is kept on an encrypted drive (basically nested encryption) on my keychain.
 
-- One Yubikey will be kept on person at all times and another as a backup in a secure, undisclosed location. 
+- Anyone using Yubikey should have two total, one as a backup. One Yubikey will be kept on person at all times and another as a backup in a secure, undisclosed location. 
   
 	##### **Additional Backup and Protection Measures:**
 	- NAS will use drives in RAID5 for added redundancy in case of drive failure or damage. 
@@ -281,6 +300,10 @@ The "keychain" recovery scheme is a great way to protect against total loss. It 
 #### KeepassXC
 
 KeepassXC does have some known vulnerabilities. However these vulnerabilities require direct physical access to the machine in order to be exploited. I believe this level of risk is acceptable and preferable in comparison to the alternative available. 
+
+#### VPNs
+
+Just like the rest of the internet, there is a level of trust that goes into using VPN's. As such, using a VPN should always be thought of as moving to a higher level of trust. Before connecting, we simply must ask ourselves, "Do I trust the network that this vendor is offering more than I trust the network I am already on?" The answer to that question might depend on if you are at home or if you are at a dodgy coffee shop. Even when on a VPN, we need to maintain our operational security and continue practicing safe internet use.  
 
 
 ## Closing
