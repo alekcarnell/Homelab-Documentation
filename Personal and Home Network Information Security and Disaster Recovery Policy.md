@@ -182,7 +182,8 @@ Transferring data introduces security risk for both the data being shared, or th
 - Ensure that the recipients of the data are trusted and adhere to security policies.
 
 
-> [!NOTE] Example
+> [!EXAMPLE]
+> 
 > You would like to work on your taxes in the comfort of a coffee shop. 
 > 
 > It would be optimal to have the tax documents already on your device or on a password protected drive when you arrive. This prevents you from needing to download a copy of your tax documents over an untrusted public wifi connection. 
