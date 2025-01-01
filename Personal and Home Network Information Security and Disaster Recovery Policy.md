@@ -4,16 +4,19 @@ Last Updated: 2025-01-01
 # Table of Contents
 - [Policy Brief & Purpose](#policy-brief--purpose)
 - [Scope](#scope)
-- [Policy elements](#policy-elements)
+- [Policy Elements](#policy-elements)
 	- [Confidential Data](#confidential-data)
 	- [Protect Personal Devices](#protect-personal-devices)
 	- [Emails](#emails)
-	- [Manage Passwords Properly](#manage-passwords-properly)
+		- [Basics of Email Security](#basics-of-email-security)
+		- [Additional Email Security Tools](#additional-email-security-tools)
+	- [Managing Passwords Properly](#managing-passwords-properly)
 	- [Multi-Factor Authentication](#multi-factor-authentication)
 	- [Communications](#communications)
 		- [Texting/SMS:](#textingsms)
 		- [Browsing:](#browsing)
 		- [Networking:](#networking)
+		- [Third-Party Apps](#third-party-apps)
 	- [Transferring Data Securely](#transferring-data-securely)
 	- [Additional Operational Controls](#additional-operational-controls)
 	- [Additional Technical Controls](#additional-technical-controls)
@@ -23,7 +26,9 @@ Last Updated: 2025-01-01
 	- [Accepted Risks & Trade-Offs:](#accepted-risks--trade-offs)
 		- [Keychain Recovery](#keychain-recovery)
 		- [KeepassXC](#keepassxc)
+		- [VPNs](#vpns)
 - [Closing](#closing)
+
 
 
 
@@ -37,11 +42,11 @@ This policy will mitigate risk and loss by defining procedures for storing, hand
 
 This policy applies to myself and all devices that I have legal ownership over. This policy is shared with and encouraged to be used by those who share residence with myself, friends, family, or any reader that wishes to reduce risk of data and asset loss. 
 
-## Policy elements
+## Policy Elements
 
 ### Confidential Data
 
-This data is secret and valuable. This policy outlines how to incorporate the cyber security triad to maintain the **Confidentiality, Integrity, and Accessibility** of our data. Relevant examples:
+This data is secret and valuable and is ultimately what this policy seeks to protect. This policy outlines how to incorporate the cyber security triad to maintain the **Confidentiality, Integrity, and Accessibility** of our data. Relevant examples:
 
 - Tax records
 - Personal Journal/Diary
@@ -81,26 +86,27 @@ While it is not mandatory for all personal devices on the network, there are ext
 
 Emails remain one of, if not the most, common mediums of attacks for malicious actors. Here we outline some foundational protocols for handling emails as well as some higher level tools we can leverage for additional protection.
 
+#### Basics of Email Security
 - Don't open attachments from unknown senders. (Just the act of opening a PDF is enough to give attackers complete control over your system)
 
 - Be suspicious of clickbait titles and subject lines. (These are often "phishing" or social engineering attempts to get you to voluntarily give up personal information.)
 
 - Look for inconsistencies or "tells" of a malicious/spam email. (grammar mistakes, asking for information)
 
-	**Additional Tools:**
-		Because emails are a large medium of attack and because we must use email in some capacity to interact with our **confidential data**, (work, banking, taxes, etc) I have determined that the monetary value of the assets being protected warrants a budget to further secure it. To this end, the following additional tools are used:
+#### Additional Email Security Tools
+Because emails are a large medium of attack and because we must use email in some capacity to interact with our **confidential data**, (work, banking, taxes, etc) I have determined that the monetary value of the assets being protected warrants a budget to further secure it. To this end, the following additional tools are used:
 
-	- A paid [Proton Mail](https://proton.me/mail) account which gets us access to:
-		- **Aliases** - allows us to give out and burn an alias if needed, instead of compromising our main email
-		- **Threat monitoring** - Proton will do scans of the internet on your behalf to look for compromises, breaches, etc. Better than nothing. 
-		- **VPN** - More on this in the [[#Networking]] section.
-		- **Advanced Spam Filtering**
+- A paid [Proton Mail](https://proton.me/mail) account which gets us access to:
+	- **Aliases** - allows us to give out and burn an alias if needed, instead of compromising our main email
+	- **Threat monitoring** - Proton will do scans of the internet on your behalf to look for compromises, breaches, etc. Better than nothing. 
+	- **VPN** - More on this in the [[#Networking]] section.
+	- **Advanced Spam Filtering**
 		
-	- [Yubikey 2FA](https://www.yubico.com/) authentication devices to secure the email account, and other accounts, which grants a higher level of security than SMS 2FA, which is susceptible to SIM Swap attacks. 
+- [Yubikey 2FA](https://www.yubico.com/) authentication devices to secure the email account, as well as other accounts, which grants a higher level of security than other 2FA methods. 
 
 
 
-### Manage Passwords Properly
+### Managing Passwords Properly
 
 Passwords are the keys to the kingdom and the assets within it. As such, securing them should be a top priority. Again, we are faced with a version of the Security Triad problem (Confidentiality, Integrity, Accessibility). Passwords must be kept a secret, they must also be hard to guess or brute-force, and they must be easily accessible so we can use our sensitive data to conduct our day-to-day tasks. The following protocols attempt to prioritize the confidentiality and security of the passwords, while still maintaining an acceptable level of accessibility. 
 
@@ -156,21 +162,35 @@ All browsers should have some kind of trusted ad-blocker extension installed on 
 
 Despite the vast amount of misinformation out there in regard to VPNs, you should absolutely use them if you are on ANY other network other than the one you were provided by your ISP. And I would still use one even while on your ISP network, which some people will either agree with or disagree with. But definitely use a VPN on any personal device that is connecting to a public WiFI network. 
   
-  
+#### Third-Party Apps
+Many individuals use third-party apps like Discord, WhatsApp, WeCHAT, and so on, so communicate with friends, family, and coworkers. These apps will have varying levels of security and privacy in place. This document can not cover all of them and their individual levels of trustworthiness, but the reader is encouraged to investigate the security of these apps and use discretion when sharing information on these platforms. 
+
+
 ### Transferring Data Securely
 
-Transferring data introduces security risk. Some practices to help mitigate potential risks include:
+Transferring data introduces security risk for both the data being shared, or the device the data is being shared to. Some practices to help mitigate potential risks include:
 
 - Use data transfer methods that align with the sensitivity of the data:
 	- Networked home storage for users, and services that serve music, memes, and non-sensitive documents.
 	- Flashdrives for semi-sensitive data.
-	- Offline devices and audited media for highly sensitive data. 
+	- Offline, audited, and/or encrypted media for highly sensitive data. 
 
 - Avoid transferring extremely sensitive data from device to device unless necessary. Extremely sensitive data should only be transferred or reviewed on air-gapped devices. 
 
 - Share confidential data over the home network or within home perimeter and not over public WiFi, unless using a VPN. (Tunnel back to home network preferred)
 
 - Ensure that the recipients of the data are trusted and adhere to security policies.
+
+
+> [!NOTE] Example
+> You would like to work on your taxes in the comfort of a coffee shop. 
+> 
+> It would be optimal to have the tax documents already on your device or on a password protected drive when you arrive. This prevents you from needing to download a copy of your tax documents over an untrusted public wifi connection. 
+> 
+> When you get home, you can use that same drive or your local network to transfer the documents to another device. You can also safely upload and submit your documents to tax prep software from any device on your trusted home network. 
+> 
+> Again, the goal to avoid sending any sensitive info over a network that you can't verify or trust to be safe. 
+
 
 
 
@@ -180,9 +200,9 @@ Additional measures encouraged to use in the home to reduce risk of compromise:
 
 - Secure and lock devices when not in use. 
 
-- Duress PIN added to mobile devices that completely wipes them when entered. 
+- Duress PIN added to mobile devices that completely wipes them when entered. (Not all operating systems will have this feature.)
 
-- Work with untrusted or not fully vetted software in a secure sandbox.
+- Work with untrusted or not fully vetted software in a secure sandbox, like an air-gapped machine or a secure virtual machine. 
   
 - Practice safe browsing habits like visiting only trusted sites and downloading files from trusted sources.
   
@@ -233,7 +253,8 @@ Should a compromise or incident occur, the following steps should be followed.
 	- retrace your own activities (was this a breach or was this invited in by negligence)
 	- Reverse engineer
  - Patch and test the vulnerability
-
+ - Re-image and deploy effected machines 
+ - Review damages and make sure all accounts and passwords are secured. 
 
 
 ### Backup, Redundancy, Protection Protocols
@@ -241,7 +262,8 @@ Should a compromise or incident occur, the following steps should be followed.
 To ensure data is not lost due to compromise, error, natural disaster, or otherwise, a backup protocol will be implemented proportional to the value of the data being backed up. 
 
 - Non-essential files can be stored on devices or user file shares on the home NAS. (to mitigate loss due to device failure, loss, breakage, etc)
-  
+	- The NAS utilizes a RAID 5 configuration which gives it a balance of fault tolerance against failed drives as well as optimal storage capacity.
+
 - More important files will be stored on devices or user account shares on the home NAS and be included in a routine backup to warm storage. From the device they will be synced to the user share and from there be backed up to a large storage device attached to the NAS. 
   
 - An automatic routine backup of the home NAS to another warm storage device will take place every Sunday evening, to include all essential files. 
@@ -277,12 +299,12 @@ In the event that there is any kind of loss or compromise, given the technologie
 - Try to fetch from trash bin or get into the device using live media to go grab the files. 
 - If unsuccessful, grab the files from the warm backup if applicable. 
 
-**Partial or 50% of data lost - Ransomware, exfiltration, power surge:**
-- Respond to incident accordingly before attempting to bring data from backups forward.
+**Partial or 50% of data lost - Ransomware, exfiltration/deletion, power surge:**
+- Respond to incident accordingly, following step in [[#Incident Response, Recovery, and Research]] before attempting to bring data from backups forward.
 - Recover from warm and local cold storage where possible. This should be possible in just about every non-catastrophic circumstance. 
 
 **Total loss - House burned down, have to leave the country, doomsday:**
-- All essential files, within a 7 day creation period, be available entirely remotely thanks to keeping a KeepassXC database and yubikey on person at all times. 
+- All essential files, within a 7 day creation period, will be available entirely remotely thanks to keeping a KeepassXC database and yubikey on person at all times and having those files stored on Protons encrypted cloud storage platform.
 - I should have my keys on me if I am not at home, and if I am at home and need to leave my home, I just need to only grab my keys (and the cat) and I will be able to access all of my most sensitive information from any computer in a safe, secure, and private manner. 
 
 
@@ -295,11 +317,11 @@ The "keychain" recovery scheme is a great way to protect against total loss. It 
 
 - The drive that will contain the KeepassXC database will be encrypted with SHA(twofish(serpent)) making it extremely costly and time consuming to crack. Realistically, you should have plenty of time to recognize that you have lost your keys and to go in and set new passwords for all of your accounts before a stranger or even a knowledgeable attacker is able to compromise your database. That being said, there are hardware hacks that an advanced attacker could potentially employ that may allow them to circumvent the encryption all together. I think the likelihood of such a sophisticated attacker finding your keys is less than your house burning down, though it's hard to really quantify I suppose. 
   
-- The Yubikey on the other hand will be able to be plugged into any device and, so long as the Yubikey software is installed on that software, they will be able to see your One Time Password and the name of the account they are associated with. However there will not be any personally identifiable information on the Yubikey that clue a bad actor on whose account they belonged to. It is important to keep it this way and ensure that there is absolutely no way to associate the keys, and anything on the keys, with your identity. This includes making sure that your name or PII is no where on your live USB. 
+- The Yubikey on the other hand will be able to be plugged into any device and, so long as the Yubikey software is installed on that device, they will be able to see your One Time Password and the name of the account they are associated with. However there will not be any personally identifiable information on the Yubikey that clue a bad actor on whose account they belonged to. It is important to keep it this way and ensure that there is absolutely no way to associate the keys, and anything on the keys, with your identity. This includes making sure that your name or PII is no where on your live USB. 
 
 #### KeepassXC
 
-KeepassXC does have some known vulnerabilities. However these vulnerabilities require direct physical access to the machine in order to be exploited. I believe this level of risk is acceptable and preferable in comparison to the alternative available. 
+KeepassXC does have some known vulnerabilities. However these vulnerabilities require direct physical access to the machine in order to be exploited. I believe this level of risk is acceptable and preferable in comparison to the alternatives available. 
 
 #### VPNs
 
