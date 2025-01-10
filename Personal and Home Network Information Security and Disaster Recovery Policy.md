@@ -156,11 +156,11 @@ All browsers should have some kind of trusted ad-blocker extension installed on 
 #### Networking:
  All networking devices, like our home router, should have default credentials changed and all other guest or admin accounts disabled, if present. Ideally, the router should have one account that has a unique username and password that only you know. 
  
- Personal devices should be configured to use a trusted VPN service provider. While this may be less important when connected to our home network, this becomes mandatory to maintain any kind of security when using public WiFi or even cellular data. 
-- Best:  [Mullvad VPN](https://mullvad.net/en) (The most secure, as it also does not require you to forfeit sensitive financial information)
+ Personal devices should be configured to use a trusted VPN service provider. While this may be less important when connected to our home network, this becomes increasingly more important to maintain security and privacy when using public WiFi or even cellular data. 
+- Best:  [Mullvad VPN](https://mullvad.net/en) (The most private, as it also does not require you to forfeit sensitive financial information)
 - Better: [Proton VPN](https://protonvpn.com/) (Very good option for our users who are using Proton for Email)
 
-Despite the vast amount of misinformation out there in regard to VPNs, you should absolutely use them if you are on ANY other network other than the one you were provided by your ISP. And I would still use one even while on your ISP network, which some people will either agree with or disagree with. But definitely use a VPN on any personal device that is connecting to a public WiFI network. 
+There is a ton of information and misinformation on how VPNs work and how necessary they are. Folks who are serious about security and privacy should spend no less than several hours researching and understanding how this VPNs work. For the sake of this document, I am highly recommending that people use them if you are on ANY other network other than the one you were provided by your ISP. And I would still use one even while on your ISP network for a variety of reasons that are beyond the scope of this document.   
   
 #### Third-Party Apps
 Many individuals use third-party apps like Discord, WhatsApp, WeCHAT, and so on, so communicate with friends, family, and coworkers. These apps will have varying levels of security and privacy in place. This document can not cover all of them and their individual levels of trustworthiness, but the reader is encouraged to investigate the security of these apps and use discretion when sharing information on these platforms. 
